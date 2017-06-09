@@ -1,0 +1,24 @@
+---
+### Vault ###
+vaulted_database_name: 'norm'
+vaulted_database_user: 'norm'
+vaulted_database_password: 'qwe123'
+
+### Deploy ###
+deploy_env: development
+force_upgrade: yes
+
+### Project ###
+skip_checkout: yes
+
+### Domains ###
+site_domain: 'myrest.local'
+
+### Front-End ###
+
+### Back-End ###
+run_api: yes
+
+### Local settings ###
+debug: True
+secret_key: 'super-secure-hash'

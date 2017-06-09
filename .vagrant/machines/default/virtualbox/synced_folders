@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/myrestproject/src/api/project":{"guestpath":"/home/vagrant/myrestproject/src/api/project","hostpath":"/home/paul/dev/django/myrestproject/myrestproject/project","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/paul/dev/django/myrestproject/myrestproject","disabled":false,"__vagrantfile":true}}}

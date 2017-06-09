@@ -1,0 +1,8 @@
+---
+### Deploy ###
+force_upgrade: no
+api_repo_branch: 'staging'
+webapp_repo_branch: ''
+
+### Domains ###
+site_domain: 'staging.django_app.com'

@@ -1,0 +1,15 @@
+[{"model": "users.user", "pk": 1, "fields": {"password": "pbkdf2_sha256$30000$eaLbWTuxU520$wqO09BDr+4JzjlO81vOz0N9ItkLnF+yzlI/ZDaBH/0I=", "last_login": null, "email": "pidor@mail.com", "first_name": "John", "last_name": "Smith", "gender": "3", "date_joined": "2017-04-01T18:58:03.404Z", "about": "\u0421\u0430\u043f, \u0414\u0432\u0430\u0447!!", "is_staff": true, "is_active": true, "is_superuser": true}},
+ {
+    "model": "oauth2_provider.application",
+    "pk": 1,
+    "fields": {
+      "client_id": "4XnsRQTGMUp1TO3WCniWsl1THzLNmjcfqU5Keh5C",
+      "user": 1,
+      "redirect_uris": "",
+      "client_type": "public",
+      "authorization_grant_type": "password",
+      "client_secret": "ugpViM0R29NiKi70ZMB9PI126gFygDkHau7Ztf11L9yuQ9c8uWIzXExhoMetgJpV1YAS9szAsjs6KmCM4IIl8Y5zFhmUDBfj07o7nUCQp2MmM66GBvn3lvSCY3z2WfPn",
+      "name": "web_auth",
+      "skip_authorization": false
+    }
+  }]

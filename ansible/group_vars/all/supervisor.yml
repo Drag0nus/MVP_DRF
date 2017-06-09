@@ -1,0 +1,28 @@
+---
+### Supervisord ###
+supervisor_version: "3.3.1"
+# Tasks
+supervisor_tasks:
+# Django
+  - name: "{{ deploy_project_name }}-gunicorn"
+    command: "{{ gunicorn_virtualenv }}/bin/gunicorn {{ django_app_name }}.wsgi --config {{ deploy_etc_dir }}/{{ gunicorn_app_name }}_gunicorn.py"
+    directory: "{{ django_dir }}"
+    environment: "DJANGO_SETTINGS_MODULE={{ django_app_name }}.settings"
+    autostart: true
+    autorestart: true
+    user: "{{ deploy_user }}"
+# Tornado
+  - name: "{{ deploy_project_name }}-tornado"
+    command: "{{ virtualenv_dir }}/bin/python start_tornado_app.py --port {{ tornado_port }}"
+    directory: "{{ django_dir }}"
+    autostart: true
+    autorestart: true
+    user: "{{ deploy_user }}"
+# Flower
+  - name: "{{ deploy_project_name }}-flower"
+    command: "{{ virtualenv_dir }}/bin/flower -A {{ deploy_project_name }} --app={{ celery_app_module }} --address={{ flower_host }} --port={{ flower_port }}"
+    directory: "{{ django_dir }}"
+    environment: "DJANGO_SETTINGS_MODULE={{ django_app_name }}.settings"
+    autostart: true
+    autorestart: true
+    user: "{{ deploy_user }}"

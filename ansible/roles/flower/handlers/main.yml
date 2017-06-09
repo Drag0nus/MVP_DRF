@@ -1,0 +1,4 @@
+---
+- name: restart flower
+  become: true
+  command: supervisorctl restart {{ deploy_project_name }}-flower

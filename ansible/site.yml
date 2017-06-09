@@ -1,0 +1,64 @@
+---
+- name: Configure application server
+  hosts: all
+  roles:
+    - role: kamaln7.swapfile
+      become: true
+      tags: [common]
+
+    - role: Stouts.deploy
+      become: true
+      tags: [common]
+
+    - role: Stouts.apt
+      become: true
+      tags: [common]
+
+    - role: ANXS.hostname
+      become: true
+      tags: [common]
+
+    - role: ANXS.ntp
+      become: yes
+      tags: [common]
+
+    - role: ANXS.git
+      become: true
+      tags: [common]
+
+    - role: Stouts.python
+      become: true
+      tags: [common]
+
+    - role: Stouts.supervisor
+      become: true
+      tags: [common]
+
+    - role: ANXS.postgresql
+      become: true
+      tags: [db]
+
+    - role: DavidWittman.redis
+      become: true
+      tags: [cache]
+
+    - role: jdauphant.nginx
+      become: true
+      tags: [server]
+
+    - role: gunicorn
+      become: true
+      tags: [project]
+
+    - role: Stouts.celery
+      become: true
+      tags: [project]
+
+    - role: webtier
+      tags: [project]
+
+    - role: tornado
+      tags: [project]
+
+    - role: flower
+      tags: [project]

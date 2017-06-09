@@ -1,0 +1,4 @@
+---
+- name: restart tornado
+  become: true
+  command: supervisorctl restart {{ deploy_project_name }}-tornado

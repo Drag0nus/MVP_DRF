@@ -1,0 +1,64 @@
+DEBUG = {{ debug }}
+
+SECRET_KEY = '{{ secret_key }}'
+
+MEDIA_URL = '{{ django_media_url }}/'
+MEDIA_ROOT = '{{ django_media_root }}'
+STATIC_URL = '{{ django_static_url }}/'
+STATIC_ROOT = '{{ django_static_root }}'
+
+
+# -----------------
+# Database
+# -----------------
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': '{{ database_name }}',
+        'USER': '{{ database_user }}',
+        'PASSWORD': '{{ database_password }}',
+        'HOST': '{{ database_host }}',
+        'PORT': {{ database_port }},
+    }
+}
+
+
+# -----------------
+# Cache
+# -----------------
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': '{{ cache_default_location }}',
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+            'PARSER_CLASS': 'redis.connection.HiredisParser',
+        }
+    }
+}
+
+
+# -----------------
+# Celery
+# -----------------
+
+BROKER_URL = '{{ cache_celery_location }}'
+CELERY_RESULT_BACKEND = '{{ cache_celery_result_location }}'
+
+
+# -----------------
+# Tornado
+# -----------------
+
+TORNADO_APP_PORT = {{ tornado_port }}
+TORNADO_APP_ADDRESS = '{{ tornado_host }}'
+
+
+# -----------------
+# Project
+# -----------------
+
+SITE_URL = '{{ site_protocol }}://{{ site_domain }}'
+API_URL = '{{ site_protocol }}://{{ api_domain }}'
